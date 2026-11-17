@@ -1,0 +1,1424 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eeuss影院官网-独立影院排片与观影指南</title>
+<meta name="description" content="eeuss影院官网提供独立影院排片、影展片单、艺术电影放映与观影体验参考。每周更新影院场次、胶片修复放映与导演专题，附选座、交通与退改签说明。">
+<meta name="keywords" content="eeuss影院官网">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c2b3a'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23e8b64c' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23e8b64c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c2b3a;
+  --ink-2:#3d4f62;
+  --muted:#6b7a8a;
+  --paper:#f7f4ee;
+  --card:#ffffff;
+  --line:#dcd6ca;
+  --line-soft:#eae4d9;
+  --gold:#c9972b;
+  --gold-soft:#f3e6c6;
+  --teal:#2f6f68;
+  --teal-soft:#e0eeec;
+  --red:#a8452f;
+  --shadow:0 2px 10px rgba(28,43,58,.07);
+  --shadow-lift:0 8px 22px rgba(28,43,58,.12);
+  --r-sm:6px;
+  --r-md:12px;
+  --r-lg:18px;
+  --sp-1:4px;
+  --sp-2:8px;
+  --sp-3:14px;
+  --sp-4:22px;
+  --sp-5:34px;
+  --sp-6:52px;
+  --fs-xs:12.5px;
+  --fs-sm:14px;
+  --fs-base:16px;
+  --fs-md:17.5px;
+  --fs-lg:22px;
+  --fs-xl:28px;
+  --fs-2xl:36px;
+  --ann-h:38px;
+  --head-h:64px;
+  --sticky:calc(var(--ann-h) + var(--head-h));
+  --max:1180px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:var(--fs-base);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700;}
+p{margin:0 0 var(--sp-3);}
+ul,ol{margin:0;padding:0;list-style:none;}
+button{font-family:inherit;}
+
+/* ---------- 吸顶公告条 ---------- */
+.announce{
+  position:sticky;
+  top:0;
+  z-index:60;
+  height:var(--ann-h);
+  background:var(--ink);
+  color:#f2ede2;
+  display:flex;
+  align-items:center;
+  font-size:var(--fs-xs);
+  letter-spacing:.02em;
+}
+.announce .wrap{
+  width:100%;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 var(--sp-4);
+  display:flex;
+  gap:var(--sp-3);
+  align-items:center;
+  justify-content:space-between;
+  overflow:hidden;
+}
+.announce b{color:var(--gold);font-weight:700;}
+.announce .ann-right{white-space:nowrap;color:#b9c2cc;}
+
+/* ---------- 页头 ---------- */
+.site-head{
+  position:sticky;
+  top:var(--ann-h);
+  z-index:55;
+  height:var(--head-h);
+  background:rgba(247,244,238,.96);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+  scroll-margin-top:var(--sticky);
+}
+.site-head .wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  height:100%;
+  padding:0 var(--sp-4);
+  display:flex;
+  align-items:center;
+  gap:var(--sp-4);
+}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto;}
+.brand svg{width:34px;height:34px;flex:0 0 auto;}
+.brand-name{font-size:var(--fs-md);font-weight:700;letter-spacing:.03em;white-space:nowrap;}
+.theme-nav{
+  display:flex;
+  gap:2px;
+  margin-left:var(--sp-3);
+  flex:1 1 auto;
+  min-width:0;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.theme-nav::-webkit-scrollbar{display:none;}
+.theme-nav a{
+  padding:8px 11px;
+  font-size:var(--fs-sm);
+  color:var(--ink-2);
+  border-radius:var(--r-sm);
+  white-space:nowrap;
+  transition:background .15s,color .15s;
+}
+.theme-nav a:hover{background:var(--gold-soft);color:var(--ink);}
+.theme-nav a:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+.head-tools{display:flex;align-items:center;gap:var(--sp-2);flex:0 0 auto;}
+.search-box{
+  display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:999px;
+  padding:5px 6px 5px 12px;
+}
+.search-box input{
+  width:132px;border:none;background:transparent;
+  font-size:var(--fs-sm);color:var(--ink);outline:none;padding:2px 0;
+}
+.search-box button{
+  border:none;background:var(--ink);color:#f4efe5;
+  border-radius:999px;padding:5px 12px;font-size:var(--fs-xs);cursor:pointer;
+}
+.search-box button:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+.menu-btn{
+  display:none;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:var(--r-sm);
+  padding:7px 10px;
+  font-size:var(--fs-sm);
+  cursor:pointer;
+  color:var(--ink);
+}
+.menu-btn:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+.search-result{
+  position:absolute;
+  right:var(--sp-4);
+  top:calc(100% + 6px);
+  width:300px;
+  max-width:calc(100vw - 32px);
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--r-md);
+  box-shadow:var(--shadow-lift);
+  padding:var(--sp-3);
+  font-size:var(--fs-sm);
+  display:none;
+  z-index:70;
+}
+.search-result.open{display:block;}
+.search-result ul{display:flex;flex-direction:column;gap:6px;}
+.search-result li a{color:var(--teal);text-decoration:underline;text-underline-offset:3px;}
+.search-result .empty{color:var(--muted);}
+
+/* ---------- 通用容器 ---------- */
+main{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 var(--sp-4) var(--sp-6);
+}
+section{scroll-margin-top:calc(var(--sticky) + 12px);}
+.sec{padding:var(--sp-5) 0 0;}
+.sec-head{display:flex;align-items:baseline;gap:var(--sp-3);flex-wrap:wrap;margin-bottom:var(--sp-4);}
+.sec-head h2{font-size:var(--fs-lg);}
+.sec-head .tag{
+  font-size:var(--fs-xs);color:var(--teal);
+  background:var(--teal-soft);border-radius:999px;
+  padding:2px 10px;
+}
+.sec-head .more{margin-left:auto;font-size:var(--fs-sm);color:var(--muted);}
+.sec-lead{color:var(--ink-2);font-size:var(--fs-sm);max-width:62ch;margin:-8px 0 var(--sp-4);}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:var(--sp-5) var(--sp-4) var(--sp-4);
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:var(--sp-5);
+  align-items:center;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:var(--fs-xs);letter-spacing:.14em;color:var(--gold);
+  border:1px solid var(--gold);border-radius:999px;
+  padding:4px 12px;margin-bottom:var(--sp-3);
+}
+.hero h1{
+  font-size:var(--fs-2xl);
+  letter-spacing:.01em;
+  margin-bottom:var(--sp-3);
+}
+.hero h1 span{color:var(--teal);}
+.hero-desc{font-size:var(--fs-md);color:var(--ink-2);max-width:34em;margin-bottom:var(--sp-4);}
+.hero-cta{display:flex;gap:var(--sp-3);flex-wrap:wrap;margin-bottom:var(--sp-4);}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 20px;border-radius:999px;font-size:var(--fs-sm);font-weight:600;
+  transition:transform .15s,box-shadow .15s,background .15s;
+}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+.btn-solid{background:var(--ink);color:#f6f1e7;box-shadow:var(--shadow);}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);}
+.btn-line{border:1px solid var(--ink);color:var(--ink);background:transparent;}
+.btn-line:hover{transform:translateY(-2px);background:var(--gold-soft);}
+.hero-stats{display:flex;gap:var(--sp-5);flex-wrap:wrap;}
+.hero-stats div{display:flex;flex-direction:column;}
+.hero-stats b{font-size:var(--fs-xl);line-height:1.1;color:var(--ink);}
+.hero-stats small{font-size:var(--fs-xs);color:var(--muted);letter-spacing:.04em;}
+.hero-art{
+  position:relative;
+  background:var(--ink);
+  border-radius:var(--r-lg);
+  padding:var(--sp-4);
+  box-shadow:var(--shadow-lift);
+  overflow:hidden;
+}
+.hero-art::before{
+  content:"";
+  position:absolute;inset:auto -40px -60px auto;
+  width:230px;height:230px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,151,43,.35),transparent 70%);
+}
+.hero-art svg{width:100%;height:auto;display:block;position:relative;}
+.hero-caption{
+  position:relative;
+  margin-top:var(--sp-3);
+  color:#cdd5dd;font-size:var(--fs-xs);line-height:1.7;
+  border-top:1px dashed rgba(255,255,255,.18);
+  padding-top:var(--sp-2);
+}
+.hero-caption b{color:var(--gold);}
+
+/* ---------- 四栏概览 ---------- */
+.overview-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:var(--sp-3);
+}
+.ov-card{
+  background:var(--card);
+  border:1px solid var(--line-soft);
+  border-radius:var(--r-md);
+  padding:var(--sp-4);
+  box-shadow:var(--shadow);
+}
+.ov-card h3{font-size:var(--fs-base);margin-bottom:6px;}
+.ov-card .num{font-size:var(--fs-xs);color:var(--gold);letter-spacing:.1em;display:block;margin-bottom:10px;}
+.ov-card p{font-size:var(--fs-sm);color:var(--ink-2);margin:0;}
+
+/* ---------- 精选推荐：非对称组合 ---------- */
+.pick{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:var(--sp-3);
+}
+.pick-main{
+  grid-row:span 2;
+  background:var(--card);
+  border:1px solid var(--line-soft);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  display:flex;flex-direction:column;
+}
+.pick-main img{width:100%;height:220px;object-fit:cover;}
+.pick-main .body{padding:var(--sp-4);display:flex;flex-direction:column;gap:8px;flex:1;}
+.pick-main h3{font-size:var(--fs-lg);}
+.pick-main p{font-size:var(--fs-sm);color:var(--ink-2);margin:0;}
+.meta{font-size:var(--fs-xs);color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;}
+.pick-side{
+  background:var(--card);
+  border:1px solid var(--line-soft);
+  border-radius:var(--r-md);
+  padding:var(--sp-3);
+  box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:6px;
+}
+.pick-side h3{font-size:var(--fs-base);}
+.pick-side p{font-size:var(--fs-sm);color:var(--ink-2);margin:0;}
+.pick-side .score{
+  font-size:var(--fs-xs);color:var(--teal);font-weight:700;letter-spacing:.05em;
+}
+
+/* ---------- 双栏主体 ---------- */
+.layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 300px;
+  gap:var(--sp-5);
+  align-items:start;
+}
+.sidebar{
+  position:sticky;
+  top:calc(var(--sticky) + 14px);
+  display:flex;flex-direction:column;gap:var(--sp-3);
+}
+.side-card{
+  background:var(--card);
+  border:1px solid var(--line-soft);
+  border-radius:var(--r-md);
+  padding:var(--sp-4);
+  box-shadow:var(--shadow);
+}
+.side-card h3{font-size:var(--fs-base);margin-bottom:10px;}
+.side-nav{display:flex;flex-direction:column;gap:2px;}
+.side-nav a{
+  font-size:var(--fs-sm);color:var(--ink-2);
+  padding:6px 10px;border-radius:var(--r-sm);
+  border-left:2px solid transparent;
+  transition:background .15s,color .15s,border-color .15s;
+}
+.side-nav a:hover{background:var(--gold-soft);}
+.side-nav a.active{background:var(--teal-soft);color:var(--teal);border-left-color:var(--teal);font-weight:600;}
+.side-nav a:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+.mini-list li{
+  font-size:var(--fs-sm);color:var(--ink-2);
+  padding:7px 0;border-bottom:1px dashed var(--line-soft);
+  display:flex;gap:8px;
+}
+.mini-list li:last-child{border-bottom:none;}
+.mini-list time{color:var(--gold);font-size:var(--fs-xs);white-space:nowrap;}
+
+/* ---------- 最新更新：紧凑列表 ---------- */
+.updates{border-top:1px solid var(--line);}
+.upd-item{
+  display:grid;
+  grid-template-columns:88px minmax(0,1fr) auto;
+  gap:var(--sp-3);
+  align-items:baseline;
+  padding:var(--sp-3) 0;
+  border-bottom:1px solid var(--line-soft);
+}
+.upd-item time{font-size:var(--fs-xs);color:var(--gold);letter-spacing:.03em;}
+.upd-item h3{font-size:var(--fs-base);}
+.upd-item p{font-size:var(--fs-sm);color:var(--muted);margin:3px 0 0;}
+.upd-item .chip{
+  font-size:var(--fs-xs);color:var(--teal);
+  background:var(--teal-soft);border-radius:999px;padding:2px 10px;white-space:nowrap;
+}
+
+/* ---------- 分类入口：标签索引 ---------- */
+.tag-index{display:flex;flex-wrap:wrap;gap:var(--sp-2);}
+.tag-index a{
+  display:inline-flex;align-items:center;gap:6px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:6px 14px;
+  font-size:var(--fs-sm);
+  background:var(--card);
+  color:var(--ink-2);
+  transition:transform .15s,border-color .15s,background .15s;
+}
+.tag-index a:hover{transform:translateY(-2px);border-color:var(--gold);background:var(--gold-soft);}
+.tag-index a:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+.tag-index a em{font-style:normal;font-size:var(--fs-xs);color:var(--muted);}
+
+/* ---------- 深度解析：分栏正文 ---------- */
+.deep{
+  background:var(--card);
+  border:1px solid var(--line-soft);
+  border-radius:var(--r-lg);
+  padding:var(--sp-5);
+  box-shadow:var(--shadow);
+}
+.deep h2{font-size:var(--fs-xl);margin-bottom:var(--sp-2);}
+.deep .deep-lead{color:var(--ink-2);font-size:var(--fs-sm);max-width:60ch;margin-bottom:var(--sp-4);}
+.deep-cols{
+  columns:2;
+  column-gap:var(--sp-5);
+  font-size:var(--fs-base);
+}
+.deep-cols h3{
+  font-size:var(--fs-md);
+  break-after:avoid;
+  margin:var(--sp-4) 0 var(--sp-2);
+  padding-left:12px;
+  border-left:3px solid var(--gold);
+}
+.deep-cols h3:first-child{margin-top:0;}
+.deep-cols p{break-inside:avoid;}
+.deep-cols strong{color:var(--teal);}
+.verdict{
+  break-inside:avoid;
+  background:var(--gold-soft);
+  border-left:3px solid var(--gold);
+  padding:var(--sp-3);
+  border-radius:0 var(--r-sm) var(--r-sm) 0;
+  font-size:var(--fs-sm);
+  margin:var(--sp-3) 0;
+}
+.verdict b{color:var(--red);}
+.checklist{
+  break-inside:avoid;
+  border:1px solid var(--line);
+  border-radius:var(--r-sm);
+  padding:var(--sp-3);
+  margin:var(--sp-3) 0;
+  font-size:var(--fs-sm);
+  background:#fbf9f4;
+}
+.checklist li{padding:4px 0 4px 18px;position:relative;color:var(--ink-2);}
+.checklist li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700;}
+
+/* ---------- 体验指南：编号步骤 ---------- */
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-3);}
+.step{
+  counter-increment:step;
+  background:var(--card);
+  border:1px solid var(--line-soft);
+  border-radius:var(--r-md);
+  padding:var(--sp-4) var(--sp-4) var(--sp-4) 58px;
+  position:relative;
+  box-shadow:var(--shadow);
+}
+.step::before{
+  content:counter(step,decimal-leading-zero);
+  position:absolute;left:var(--sp-4);top:var(--sp-4);
+  font-size:var(--fs-sm);font-weight:700;color:var(--gold);
+  border:1px solid var(--gold);border-radius:50%;
+  width:30px;height:30px;display:grid;place-items:center;
+}
+.step h3{font-size:var(--fs-base);margin-bottom:4px;}
+.step p{font-size:var(--fs-sm);color:var(--ink-2);margin:0;}
+
+/* ---------- 对照面板 ---------- */
+.compare{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border:1px solid var(--line);
+  border-radius:var(--r-md);
+  overflow:hidden;
+  background:var(--card);
+}
+.compare>div{padding:var(--sp-4);}
+.compare>div:first-child{border-right:1px solid var(--line);}
+.compare h3{font-size:var(--fs-base);margin-bottom:var(--sp-2);display:flex;align-items:center;gap:8px;}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+.dot.a{background:var(--teal);}
+.dot.b{background:var(--red);}
+.compare li{font-size:var(--fs-sm);color:var(--ink-2);padding:5px 0 5px 14px;position:relative;}
+.compare li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;}
+
+/* ---------- 榜单 ---------- */
+.rank{border-top:1px solid var(--line);}
+.rank-row{
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr) 120px 68px;
+  gap:var(--sp-3);
+  align-items:center;
+  padding:var(--sp-3) 0;
+  border-bottom:1px solid var(--line-soft);
+  font-size:var(--fs-sm);
+}
+.rank-row .no{
+  font-size:var(--fs-lg);font-weight:700;color:var(--line);
+  font-variant-numeric:tabular-nums;
+}
+.rank-row:nth-child(-n+3) .no{color:var(--gold);}
+.rank-row .t b{display:block;color:var(--ink);font-size:var(--fs-base);}
+.rank-row .t span{color:var(--muted);font-size:var(--fs-xs);}
+.bar{height:6px;border-radius:99px;background:var(--line-soft);overflow:hidden;}
+.bar i{display:block;height:100%;background:var(--teal);border-radius:99px;}
+.rank-row .val{text-align:right;color:var(--teal);font-weight:700;font-size:var(--fs-xs);}
+
+/* ---------- FAQ ---------- */
+.faq details{
+  background:var(--card);
+  border:1px solid var(--line-soft);
+  border-radius:var(--r-md);
+  padding:var(--sp-3) var(--sp-4);
+  margin-bottom:var(--sp-2);
+  box-shadow:var(--shadow);
+}
+.faq summary{
+  cursor:pointer;
+  font-size:var(--fs-base);
+  font-weight:600;
+  list-style:none;
+  display:flex;justify-content:space-between;gap:var(--sp-3);
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";color:var(--gold);font-weight:700;}
+.faq details[open] summary::after{content:"−";}
+.faq summary:focus-visible{outline:2px solid var(--teal);outline-offset:3px;}
+.faq .ans{font-size:var(--fs-sm);color:var(--ink-2);padding-top:10px;}
+
+/* ---------- 评论 ---------- */
+.reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-3);}
+.review{
+  background:var(--card);
+  border:1px solid var(--line-soft);
+  border-radius:var(--r-md);
+  padding:var(--sp-4);
+  box-shadow:var(--shadow);
+}
+.review .who{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.avatar{
+  width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--teal-soft);color:var(--teal);
+  font-size:var(--fs-sm);font-weight:700;
+}
+.review .who b{font-size:var(--fs-sm);}
+.review .who span{font-size:var(--fs-xs);color:var(--muted);display:block;}
+.review p{font-size:var(--fs-sm);color:var(--ink-2);margin:0;}
+.review .rating{font-size:var(--fs-xs);color:var(--gold);letter-spacing:.1em;margin-top:8px;}
+
+/* ---------- 资讯 ---------- */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);}
+.news{
+  background:var(--card);
+  border:1px solid var(--line-soft);
+  border-radius:var(--r-md);
+  padding:var(--sp-4);
+  box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:8px;
+}
+.news h3{font-size:var(--fs-base);}
+.news p{font-size:var(--fs-sm);color:var(--ink-2);margin:0;}
+.news .src{font-size:var(--fs-xs);color:var(--muted);margin-top:auto;}
+
+/* ---------- 相关推荐 ---------- */
+.rec-list{display:flex;flex-wrap:wrap;gap:var(--sp-2);}
+.rec-list a{
+  border:1px dashed var(--line);
+  border-radius:var(--r-sm);
+  padding:7px 13px;
+  font-size:var(--fs-sm);
+  color:var(--ink-2);
+  background:var(--card);
+  transition:border-color .15s,color .15s,transform .15s;
+}
+.rec-list a:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px);}
+.rec-list a:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+
+/* ---------- 引语卡 ---------- */
+.quote{
+  background:var(--ink);
+  color:#ece5d7;
+  border-radius:var(--r-lg);
+  padding:var(--sp-5);
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:var(--sp-4);
+  align-items:start;
+  box-shadow:var(--shadow-lift);
+}
+.quote .mark{font-size:52px;line-height:.8;color:var(--gold);font-family:Georgia,serif;}
+.quote blockquote{margin:0;font-size:var(--fs-md);line-height:1.8;}
+.quote cite{display:block;margin-top:var(--sp-3);font-style:normal;font-size:var(--fs-xs);color:#a8b4c1;}
+
+/* ---------- 回到顶部 ---------- */
+.to-top{
+  position:fixed;
+  right:18px;bottom:20px;
+  z-index:50;
+  width:44px;height:44px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--ink);
+  font-size:var(--fs-sm);
+  box-shadow:var(--shadow-lift);
+  cursor:pointer;
+  display:none;
+  place-items:center;
+}
+.to-top.show{display:grid;}
+.to-top:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+
+/* ---------- 页脚 ---------- */
+footer{
+  background:var(--ink);
+  color:#c9d2db;
+  padding:var(--sp-6) var(--sp-4) var(--sp-4);
+  margin-top:var(--sp-6);
+  font-size:var(--fs-sm);
+}
+.foot-wrap{max-width:var(--max);margin:0 auto;}
+.foot-top{
+  display:grid;
+  grid-template-columns:1.3fr 2fr;
+  gap:var(--sp-5);
+  padding-bottom:var(--sp-5);
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:var(--sp-3);color:#f3ece0;}
+.foot-brand svg{width:30px;height:30px;}
+.foot-brand b{font-size:var(--fs-md);}
+.foot-desc{color:#9fabb8;line-height:1.8;max-width:36ch;}
+.foot-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-4);}
+.foot-cols h3{font-size:var(--fs-sm);color:var(--gold);margin-bottom:10px;letter-spacing:.05em;}
+.foot-cols li{margin-bottom:6px;}
+.foot-cols a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px;}
+.foot-note{
+  padding-top:var(--sp-4);
+  display:flex;flex-wrap:wrap;gap:var(--sp-3) var(--sp-5);
+  justify-content:space-between;
+  color:#8593a2;font-size:var(--fs-xs);
+}
+.foot-note p{margin:0;}
+
+@media (max-width:1024px){
+  .hero{grid-template-columns:1fr;gap:var(--sp-4);}
+  .hero-art{max-width:520px;}
+  .overview-grid{grid-template-columns:repeat(2,1fr);}
+  .layout{grid-template-columns:1fr;}
+  .sidebar{position:static;order:2;display:grid;grid-template-columns:1fr 1fr;}
+  .pick{grid-template-columns:1fr 1fr;}
+  .pick-main{grid-row:auto;grid-column:span 2;}
+  .deep-cols{columns:1;}
+  .news-grid{grid-template-columns:1fr 1fr;}
+  .foot-top{grid-template-columns:1fr;}
+}
+@media (max-width:760px){
+  :root{--fs-2xl:27px;--fs-xl:23px;--fs-lg:20px;}
+  .theme-nav{
+    position:absolute;
+    left:0;right:0;top:100%;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    box-shadow:var(--shadow-lift);
+    flex-direction:column;
+    padding:var(--sp-2) var(--sp-4) var(--sp-3);
+    display:none;
+    gap:0;
+    max-height:70vh;
+    overflow-y:auto;
+  }
+  .theme-nav.open{display:flex;}
+  .site-head .wrap{position:relative;}
+  .menu-btn{display:inline-block;}
+  .search-box input{width:92px;}
+  .hero{padding-top:var(--sp-4);}
+  .hero-stats{gap:var(--sp-4);}
+  .overview-grid{grid-template-columns:1fr;}
+  .pick{grid-template-columns:1fr;}
+  .pick-main{grid-column:auto;}
+  .pick-main img{height:180px;}
+  .upd-item{grid-template-columns:1fr auto;gap:2px var(--sp-3);}
+  .upd-item time{grid-column:1/-1;}
+  .upd-item p{grid-column:1/-1;}
+  .steps{grid-template-columns:1fr;}
+  .compare{grid-template-columns:1fr;}
+  .compare>div:first-child{border-right:none;border-bottom:1px solid var(--line);}
+  .reviews{grid-template-columns:1fr;}
+  .news-grid{grid-template-columns:1fr;}
+  .sidebar{grid-template-columns:1fr;}
+  .rank-row{grid-template-columns:32px minmax(0,1fr) 66px;gap:var(--sp-2);}
+  .rank-row .bar-cell{display:none;}
+  .quote{grid-template-columns:1fr;gap:var(--sp-2);}
+  .foot-cols{grid-template-columns:1fr 1fr;}
+  .announce .ann-right{display:none;}
+  .deep{padding:var(--sp-4);}
+  .to-top{bottom:16px;right:12px;width:40px;height:40px;}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none!important;animation:none!important;}
+  .btn:hover,.tag-index a:hover,.rec-list a:hover{transform:none;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce" id="announce">
+  <div class="wrap">
+    <div><b>eeuss影院官网</b> 11月7日更新：本周「小津安二郎 4K 修复回顾展」加开 3 场，11月9日《东京物语》10:30 场次余票 46 张。</div>
+    <div class="ann-right">排片数据每日 09:00 同步 · 当前展示 2026-10-10 至 2026-11-08</div>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="site-head" id="top">
+  <div class="wrap">
+    <a class="brand" href="/#top" aria-label="eeuss影院官网首页">
+      <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1c2b3a"/>
+        <circle cx="32" cy="32" r="17" fill="none" stroke="#e8b64c" stroke-width="4"/>
+        <circle cx="32" cy="32" r="5" fill="#e8b64c"/>
+        <rect x="29" y="6" width="6" height="6" rx="1.5" fill="#2f6f68"/>
+      </svg>
+      <span class="brand-name">eeuss影院官网</span>
+    </a>
+    <nav class="theme-nav" id="themeNav" aria-label="主题导航">
+      <a href="/#overview">影院概览</a>
+      <a href="/#picks">本周精选</a>
+      <a href="/#updates">最新排片</a>
+      <a href="/#channels">频道分类</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">观影指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#reviews">观众评论</a>
+      <a href="/#news">行业资讯</a>
+    </nav>
+    <div class="head-tools">
+      <div class="search-box">
+        <label for="siteSearch" class="sr-only" style="position:absolute;left:-9999px;">站内搜索</label>
+        <input id="siteSearch" type="search" placeholder="搜片名 / 导演 / 影厅" autocomplete="off">
+        <button type="button" id="searchBtn">查找</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="themeNav">菜单</button>
+    </div>
+    <div class="search-result" id="searchResult" role="status" aria-live="polite"></div>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero" aria-label="首屏">
+  <div>
+    <span class="hero-kicker">独立影院 · 艺术电影放映</span>
+    <h1>eeuss影院官网</h1>
+    <p class="hero-desc">三家影厅共 612 个座位，主打修复版经典与作者电影。当前排片覆盖小津安二郎回顾展、伊朗新浪潮单元和周三纪录片夜；每天 09:00 更新场次与余票，支持在线选座后到店取票。</p>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="/#updates">查看今日排片</a>
+      <a class="btn btn-line" href="/#guide">第一次来怎么走</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>3</b><small>放映厅</small></div>
+      <div><b>612</b><small>座位数</small></div>
+      <div><b>27</b><small>本周场次</small></div>
+      <div><b>4K</b><small>修复放映</small></div>
+    </div>
+  </div>
+  <div class="hero-art" aria-hidden="false">
+    <svg viewBox="0 0 420 280" role="img" aria-label="影院银幕与三排座位的抽象构图">
+      <rect x="18" y="16" width="384" height="150" rx="10" fill="#12202c"/>
+      <rect x="34" y="30" width="352" height="122" rx="6" fill="#243b4d"/>
+      <rect x="34" y="30" width="352" height="122" rx="6" fill="none" stroke="#c9972b" stroke-width="1.5" opacity=".7"/>
+      <circle cx="210" cy="91" r="30" fill="none" stroke="#e8b64c" stroke-width="3" opacity=".9"/>
+      <circle cx="210" cy="91" r="9" fill="#e8b64c" opacity=".9"/>
+      <path d="M60 130 L120 82 L176 118 L238 70 L300 108 L360 74" fill="none" stroke="#2f6f68" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+      <g fill="#2f6f68">
+        <rect x="52" y="192" width="60" height="18" rx="6"/>
+        <rect x="124" y="192" width="60" height="18" rx="6"/>
+        <rect x="196" y="192" width="60" height="18" rx="6"/>
+        <rect x="268" y="192" width="60" height="18" rx="6"/>
+      </g>
+      <g fill="#3d4f62">
+        <rect x="70" y="220" width="60" height="18" rx="6"/>
+        <rect x="142" y="220" width="60" height="18" rx="6"/>
+        <rect x="214" y="220" width="60" height="18" rx="6"/>
+        <rect x="286" y="220" width="60" height="18" rx="6"/>
+      </g>
+      <g fill="#54677a" opacity=".8">
+        <rect x="88" y="248" width="60" height="16" rx="6"/>
+        <rect x="160" y="248" width="60" height="16" rx="6"/>
+        <rect x="232" y="248" width="60" height="16" rx="6"/>
+      </g>
+      <circle cx="372" cy="150" r="18" fill="none" stroke="#c9972b" stroke-width="2" opacity=".6"/>
+    </svg>
+    <p class="hero-caption"><b>一号厅</b> 银幕宽 9.2 米，2K 数字放映；<b>三号厅</b> 保留 35mm 胶片机，每月第二个周六做胶片专场。</p>
+  </div>
+</section>
+
+<main>
+  <!-- 领域概览 -->
+  <section class="sec" id="overview">
+    <div class="sec-head">
+      <h2>影院概览</h2>
+      <span class="tag">三家影厅 · 四种放映制式</span>
+    </div>
+    <p class="sec-lead">按影厅、片源与放映设备拆开看，选座与票价差异主要来自这三个变量，而不是影片新旧。</p>
+    <div class="overview-grid">
+      <div class="ov-card">
+        <span class="num">01 / 一号厅</span>
+        <h3>一号厅 · 杜比全景声</h3>
+        <p>228 座，银幕 9.2 米，支持 4K DCP 与全景声。修复版经典多安排在此，票价通常比二号厅高 15 元。</p>
+      </div>
+      <div class="ov-card">
+        <span class="num">02 / 二号厅</span>
+        <h3>二号厅 · 小型作者厅</h3>
+        <p>146 座，银幕 6.4 米，5.1 声道。纪录片夜与导演处女作常驻，工作日下午场票价 35 元。</p>
+      </div>
+      <div class="ov-card">
+        <span class="num">03 / 三号厅</span>
+        <h3>三号厅 · 胶片专场</h3>
+        <p>238 座，配 35mm 放映机与 4K 数字双系统。每月第二个周六做胶片专场，片源来自香港电影资料馆借展。</p>
+      </div>
+      <div class="ov-card">
+        <span class="num">04 / 票务规则</span>
+        <h3>退改签与取票</h3>
+        <p>开场前 2 小时可免费改签一次；取票码在开场前 30 分钟生效，凭码在自助机打印纸质票入场。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 双栏主体开始 -->
+  <div class="layout">
+    <div class="main-col">
+
+      <!-- 精选推荐 -->
+      <section class="sec" id="picks">
+        <div class="sec-head">
+          <h2>本周精选放映</h2>
+          <a class="more" href="/#updates">全部场次 →</a>
+        </div>
+        <div class="pick">
+          <article class="pick-main">
+            <img src="https://picsum.photos/seed/eeuss-tokyo-story/720/440" width="720" height="440" loading="lazy" alt="《东京物语》4K 修复版放映现场旧式座椅与银幕">
+            <div class="body">
+              <div class="meta"><span>11月9日 10:30</span><span>一号厅</span><span>4K 修复</span></div>
+              <h3>《东京物语》4K 修复版 · 小津安二郎回顾展开幕场</h3>
+              <p>日本松竹 2025 年完成的 4K 扫描版，片长 136 分钟，映前 15 分钟由影评人林知远做导赏，主题是「低机位与家庭空间」。开场后不再入场。</p>
+              <div class="meta"><span>余票 46</span><span>票价 68 元</span><span>日语原声 / 中文字幕</span></div>
+            </div>
+          </article>
+          <article class="pick-side">
+            <span class="score">策展人推荐 · 98</span>
+            <h3>《特写》35mm 胶片场</h3>
+            <p>阿巴斯·基亚罗斯塔米，1990 年，98 分钟。三号厅 11月14日 19:00，胶片拷贝由香港电影资料馆借展。</p>
+            <div class="meta"><span>余票 121</span></div>
+          </article>
+          <article class="pick-side">
+            <span class="score">新片 · 首轮</span>
+            <h3>《河边的错误》导演剪辑版</h3>
+            <p>魏书钧，2026 年重剪版，比公映版多 11 分钟。二号厅 11月10日 20:15，映后有 30 分钟现场交流。</p>
+            <div class="meta"><span>余票 33</span></div>
+          </article>
+          <article class="pick-side">
+            <span class="score">纪录片夜 · 免费</span>
+            <h3>《坂本龙一：最后的日子》</h3>
+            <p>NHK 2024 年纪录片，96 分钟。周三 19:30 二号厅，需提前在取票机领取免费票，每场限 146 人。</p>
+            <div class="meta"><span>余票 28</span></div>
+          </article>
+          <article class="pick-side">
+            <span class="score">亲子场 · 周末</span>
+            <h3>《龙猫》国语配音版</h3>
+            <p>1988 年宫崎骏作品，86 分钟。11月8日 14:00 一号厅，儿童票 30 元，一米二以下免票不占座。</p>
+            <div class="meta"><span>余票 87</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="sec" id="updates">
+        <div class="sec-head">
+          <h2>最新排片与场次变动</h2>
+          <span class="tag">11月7日 09:00 同步</span>
+        </div>
+        <div class="updates">
+          <article class="upd-item">
+            <time datetime="2026-11-08">今天 11-08</time>
+            <div>
+              <h3>《东京物语》11月9日 10:30 场加开 1 场</h3>
+              <p>原定 1 场售罄，加开场次座位为一号厅 1—6 排，票价与首场一致 68 元。</p>
+            </div>
+            <span class="chip">加场</span>
+          </article>
+          <article class="upd-item">
+            <time datetime="2026-11-07">昨天 11-07</time>
+            <div>
+              <h3>三号厅 11月14日胶片场改至 19:30 开映</h3>
+              <p>因胶片拷贝交接延迟 30 分钟，已购票观众可原座入场，退票免手续费。</p>
+            </div>
+            <span class="chip">时间调整</span>
+          </article>
+          <article class="upd-item">
+            <time datetime="2026-11-06">11-06</time>
+            <div>
+              <h3>《河边的错误》导演剪辑版新增 11月10日 20:15 场</h3>
+              <p>导演魏书钧与剪辑指导到场，映后交流约 30 分钟，现场设提问环节。</p>
+            </div>
+            <span class="chip">新场次</span>
+          </article>
+          <article class="upd-item">
+            <time datetime="2026-11-05">11-05</time>
+            <div>
+              <h3>周三纪录片夜 11月11日选片公布：《持摄影机的人》</h3>
+              <p>1929 年吉加·维尔托夫作品，68 分钟，配现场电子音乐，演奏者赵一舟。</p>
+            </div>
+            <span class="chip">片单公布</span>
+          </article>
+          <article class="upd-item">
+            <time datetime="2026-11-03">11-03</time>
+            <div>
+              <h3>二号厅 11月4日至6日空调检修，场次照常</h3>
+              <p>维修期间厅内温度约 26℃，影院提供毛毯与饮用水，已退票 0 张。</p>
+            </div>
+            <span class="chip">设施</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="sec" id="channels">
+        <div class="sec-head">
+          <h2>频道分类</h2>
+          <span class="tag">按片源与场次类型</span>
+        </div>
+        <div class="tag-index">
+          <a href="/#picks">小津安二郎回顾展 <em>7 场</em></a>
+          <a href="/#picks">伊朗新浪潮单元 <em>4 场</em></a>
+          <a href="/#updates">4K 修复放映 <em>9 场</em></a>
+          <a href="/#picks">35mm 胶片专场 <em>2 场</em></a>
+          <a href="/#picks">周三纪录片夜 <em>1 场</em></a>
+          <a href="/#picks">导演映后交流 <em>3 场</em></a>
+          <a href="/#faq">艺术电影选座攻略 <em>指南</em></a>
+          <a href="/#picks">亲子动画周末场 <em>2 场</em></a>
+          <a href="/#news">影院行业动态 <em>资讯</em></a>
+          <a href="/#guide">首次观影流程 <em>指南</em></a>
+          <a href="/#reviews">观众观后感 <em>评论</em></a>
+          <a href="/#deep">修复版画质辨析 <em>解析</em></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="sec" id="deep">
+        <div class="deep">
+          <h2>深度解析：修复版 4K 放映，值不值那张 68 元的票</h2>
+          <p class="deep-lead">判断依据不是「4K」这个标签，而是扫描源、修复方与影厅放映机的匹配度。以下三节各给出可核对的中段与结论。</p>
+          <div class="deep-cols">
+            <h3>一、扫描源决定上限：35mm 底片与 4K 扫描是两件事</h3>
+            <p>《东京物语》这次放映用的是松竹 2025 年在东京现像所完成的 4K 扫描，片源为 1953 年原始 35mm 底片。底片有效分辨率约相当于 4K 到 6K，扫描仪型号为 ARRISCAN XT，单帧 16bit 色彩深度。修复方在公开说明里写明：颗粒保留，未做降噪处理。同一部片 2013 年的 Criterion 2K 修复版做过轻度降噪，两者在暗部颗粒上差别明显。</p>
+            <p>可核对的中段是：<strong>11月9日 10:30 场使用的 DCP 为 4096×2160、24 帧、DCI-P3 色域</strong>，片头有松竹修复标识与 2025 年版权行。放映前可在一号厅入口的场次牌上看到格式标注，写的是「4K DCP」，不是「2K 放大」。</p>
+            <div class="checklist">
+              <ul>
+                <li>场次牌格式栏写「4K DCP」</li>
+                <li>片头有松竹修复标识与年份 2025</li>
+                <li>片长 136 分钟，与修复版一致</li>
+                <li>一号厅放映机为 Christie CP4230</li>
+              </ul>
+            </div>
+
+            <h3>二、影厅设备决定下限：9.2 米银幕上的 4K 不算浪费</h3>
+            <p>一号厅银幕宽 9.2 米，按 4K 投影的常规亮度标准，银幕增益 1.8 时中心亮度约 14fL，符合 DCI 规范。争议点在亮度衰减：这台 CP4230 的灯泡已运行 1120 小时，官方建议 1500 小时更换，当前亮度约为新灯的 88%。影院工程部 10月28日的检测记录显示，中心亮度 12.6fL，边缘 9.4fL，仍在可接受区间。</p>
+            <div class="verdict"><b>判断：</b>这次 4K 修复场的画质提升主要来自扫描源与调色，而不是分辨率数字。若换到银幕 6.4 米的二号厅放映，4K 与 2K 的肉眼差异会缩小到几乎不可辨；68 元票价里，约 20 元买的是银幕尺寸与全景声，而不是像素。</div>
+
+            <h3>三、票价对照：同一部片，三个厅三种价格</h3>
+            <p>把 11月9日至11月14日的《东京物语》相关场次拉平看：一号厅 4K 修复场 68 元；二号厅 2K 数字场 52 元；三号厅若排胶片场，按 35mm 拷贝成本定价 78 元，但本片本轮未排胶片。价差 16 元对应的是银幕面积从 9.2 米降到 6.4 米、声道从全景声降到 5.1。观众若坐 7 排以后，二号厅的视角反而更接近导演当年在东京砌座影院看到的画面比例。</p>
+            <p>反过来说，若只冲「修复」二字买票，二号厅 52 元场同样使用 2025 年 4K 扫描下变换的 2K DCP，画面信息量保留约 70%，票价便宜 24%。这条判断可以被反驳：全景声在小津作品里几乎无用武之地，本片原始声轨为单声道光学声轨，修复后也只做了 2.0 无损，全景声厅的优势不成立。</p>
+            <div class="verdict"><b>可核对：</b>影片原始声轨为 1953 年单声道光学声轨，修复版音轨规格 24bit/48kHz 2.0。想听「全景声效果」的观众，在本片场次里得不到额外信息。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 体验指南 -->
+      <section class="sec" id="guide">
+        <div class="sec-head">
+          <h2>首次观影体验指南</h2>
+          <span class="tag">从取票到散场</span>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <h3>开场前 30 分钟取票</h3>
+            <p>自助取票机在一层入口右侧，共 2 台。取票码在开场前 30 分钟生效，过早输入会提示「未到取票时间」。</p>
+          </li>
+          <li class="step">
+            <h3>选座看银幕距离</h3>
+            <p>一号厅 7—9 排中区视角最稳，银幕占视野约 60%；三号厅因胶片放映机投射角略高，建议选 5 排以后。</p>
+          </li>
+          <li class="step">
+            <h3>映前导赏提前 15 分钟入场</h3>
+            <p>有导赏的场次，导赏在开映前 15 分钟开始，此时入场不查票根二次，但迟到会被要求在门厅等候至导赏结束。</p>
+          </li>
+          <li class="step">
+            <h3>胶片场禁止拍照</h3>
+            <p>35mm 放映期间闪光灯会损伤胶片拷贝，三号厅入口设手机寄存柜，散场后凭手牌取回，寄存免费。</p>
+          </li>
+          <li class="step">
+            <h3>散场后交流区在二层</h3>
+            <p>映后交流移至二层咖啡区，座位 48 个，先到先坐。11月10日《河边的错误》场交流持续至 22:30。</p>
+          </li>
+          <li class="step">
+            <h3>交通与停车</h3>
+            <p>地铁 4 号线文化宫站 B 口步行 420 米；地下停车场 18:00 后满位概率高，建议改停对面商场，凭票根减免 2 小时。</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- 对照面板 -->
+      <section class="sec" id="compare">
+        <div class="sec-head">
+          <h2>数字放映与胶片放映对照</h2>
+          <span class="tag">同片不同制式</span>
+        </div>
+        <div class="compare">
+          <div>
+            <h3><span class="dot a"></span>4K 数字修复场</h3>
+            <ul>
+              <li>场地：一号厅，银幕 9.2 米</li>
+              <li>格式：4096×2160 DCP，24 帧</li>
+              <li>票价：68 元</li>
+              <li>可重复放映，场次稳定</li>
+              <li>颗粒经扫描保留，但无胶片抖动</li>
+              <li>适合首次看该片的观众</li>
+            </ul>
+          </div>
+          <div>
+            <h3><span class="dot b"></span>35mm 胶片场</h3>
+            <ul>
+              <li>场地：三号厅，银幕 7.8 米</li>
+              <li>格式：35mm 拷贝，24 格/秒</li>
+              <li>票价：78 元</li>
+              <li>受拷贝状态影响，偶有划痕</li>
+              <li>色彩为胶片洗印后的固有偏差</li>
+              <li>适合已看过数字版的观众</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 榜单 -->
+      <section class="sec" id="rank">
+        <div class="sec-head">
+          <h2>本周上座率榜</h2>
+          <span class="tag">11月2日—11月7日 · 按出票数</span>
+        </div>
+        <div class="rank">
+          <div class="rank-row">
+            <div class="no">01</div>
+            <div class="t"><b>《东京物语》4K 修复版</b><span>一号厅 · 4 场</span></div>
+            <div class="bar-cell"><div class="bar"><i style="width:96%"></i></div></div>
+            <div class="val">96%</div>
+          </div>
+          <div class="rank-row">
+            <div class="no">02</div>
+            <div class="t"><b>《河边的错误》导演剪辑版</b><span>二号厅 · 2 场</span></div>
+            <div class="bar-cell"><div class="bar"><i style="width:88%"></i></div></div>
+            <div class="val">88%</div>
+          </div>
+          <div class="rank-row">
+            <div class="no">03</div>
+            <div class="t"><b>《特写》35mm 胶片场</b><span>三号厅 · 1 场</span></div>
+            <div class="bar-cell"><div class="bar"><i style="width:81%"></i></div></div>
+            <div class="val">81%</div>
+          </div>
+          <div class="rank-row">
+            <div class="no">04</div>
+            <div class="t"><b>《龙猫》国语配音版</b><span>一号厅 · 2 场</span></div>
+            <div class="bar-cell"><div class="bar"><i style="width:74%"></i></div></div>
+            <div class="val">74%</div>
+          </div>
+          <div class="rank-row">
+            <div class="no">05</div>
+            <div class="t"><b>《坂本龙一：最后的日子》</b><span>二号厅 · 1 场</span></div>
+            <div class="bar-cell"><div class="bar"><i style="width:63%"></i></div></div>
+            <div class="val">63%</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="sec faq" id="faq">
+        <div class="sec-head">
+          <h2>常见问题</h2>
+          <span class="tag">选座 · 退改 · 放映</span>
+        </div>
+        <details>
+          <summary>《东京物语》4K 修复版 11月9日还有票吗？</summary>
+          <div class="ans">10:30 场截至 11月8日 09:00 余票 46 张，集中在 1—6 排与 10 排两侧。加开场次与首场同价 68 元，在线选座后可到店取票，开场后 15 分钟停止入场。</div>
+        </details>
+        <details>
+          <summary>一号厅和二号厅看艺术电影，选座差别在哪？</summary>
+          <div class="ans">一号厅银幕 9.2 米、228 座，7—9 排中区视角稳；二号厅银幕 6.4 米、146 座，最佳区在 4—6 排。艺术电影多为 1.85:1 或 1.37:1 画幅，画面上下留黑边，坐太靠前会看到银幕边缘，建议至少退到第 5 排。</div>
+        </details>
+        <details>
+          <summary>35mm 胶片场为什么比数字场贵 10 元？</summary>
+          <div class="ans">胶片拷贝从香港电影资料馆借展，单次运输与保险成本约 3800 元，分摊到 2 场、每场约 120 张票上，每张票增加约 16 元。影院在 11月14日场把票价定为 78 元，比数字场高 10 元，差价未完全转嫁。</div>
+        </details>
+        <details>
+          <summary>周三纪录片夜的免费票怎么领？</summary>
+          <div class="ans">免费票在每周三 18:00 起在自助取票机领取，需刷身份证，一人一张，不可代领。11月11日场为《持摄影机的人》，68 分钟，配现场电子音乐，二号厅 146 座，领完即止。</div>
+        </details>
+        <details>
+          <summary>映后交流一般持续多久，需要另买票吗？</summary>
+          <div class="ans">映后交流包含在电影票内，不另收费，通常 30 分钟，导演场可能延长至 45 分钟。11月10日《河边的错误》场安排在二层咖啡区，座位 48 个，先到先坐，无座可在护栏外站立旁听。</div>
+        </details>
+        <details>
+          <summary>迟到了还能进场吗？</summary>
+          <div class="ans">正片开场 15 分钟后停止入场，这是为了减少对观众的干扰。迟到者可在大厅屏幕看同步画面，或凭票根到售票处改签同片其他场次，改签不收费，每张票限一次。</div>
+        </details>
+      </section>
+
+      <!-- 评论 -->
+      <section class="sec" id="reviews">
+        <div class="sec-head">
+          <h2>观众评论</h2>
+          <span class="tag">来自取票系统评价 · 近 7 天</span>
+        </div>
+        <div class="reviews">
+          <article class="review">
+            <div class="who"><span class="avatar">陈</span><div><b>陈默</b><span>11月7日 · 《东京物语》4K 修复版</span></div></div>
+            <p>7 排 12 座，画质比我 2019 年在资料馆看的 2K 版干净，但没到「换了一部片」的程度。片头松竹那行 2025 修复标识出来时全场有人小声鼓掌，挺有意思。</p>
+            <div class="rating">★★★★☆</div>
+          </article>
+          <article class="review">
+            <div class="who"><span class="avatar">许</span><div><b>许一舟</b><span>11月6日 · 二号厅《持摄影机的人》预告场</span></div></div>
+            <p>二号厅空调确实还没修好，坐到一半出汗。片子本身没问题，现场电子音乐那段和维尔托夫的剪辑点对得挺准。希望 11月11日正式场能把温度降下来。</p>
+            <div class="rating">★★★☆☆</div>
+          </article>
+          <article class="review">
+            <div class="who"><span class="avatar">林</span><div><b>林知远</b><span>11月5日 · 《特写》35mm 胶片场</span></div></div>
+            <p>三号厅 5 排 6 座，胶片颗粒在暗部非常明显，和数字修复版是两种东西。拷贝第 3 本有一处竖向划痕，持续约 4 秒，映后工作人员确认是借展拷贝原有损伤。</p>
+            <div class="rating">★★★★☆</div>
+          </article>
+          <article class="review">
+            <div class="who"><span class="avatar">王</span><div><b>王一帆</b><span>11月4日 · 一号厅《龙猫》</span></div></div>
+            <p>带孩子看的，国语配音版口型对得一般，但孩子不在意。唯一问题是 1 排 8 座离银幕太近，仰头看了 86 分钟，脖子酸。选座页面应该标一下「仰角过大」提示。</p>
+            <div class="rating">★★★☆☆</div>
+          </article>
+          <article class="review">
+            <div class="who"><span class="avatar">赵</span><div><b>赵一舟</b><span>11月3日 · 周三纪录片夜</span></div></div>
+            <p>免费票领得很快，18:05 到的已经只剩后排。片子是《持摄影机的人》的预热场，放了 20 分钟片段。作为免费活动没什么可挑的，但希望能提前一天在公告条挂出片名。</p>
+            <div class="rating">★★★★☆</div>
+          </article>
+          <article class="review">
+            <div class="who"><span class="avatar">周</span><div><b>周苇</b><span>11月2日 · 《东京物语》2K 数字场</span></div></div>
+            <p>特意买了二号厅 52 元的场对比，坐 5 排，银幕 6.4 米确实更接近老片院的观感。全景声厅放单声道片，多花的 16 元我觉得不太值，这个判断我保留。</p>
+            <div class="rating">★★★★☆</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="sec" id="news">
+        <div class="sec-head">
+          <h2>影院与放映行业资讯</h2>
+          <span class="tag">10月10日—11月7日</span>
+        </div>
+        <div class="news-grid">
+          <article class="news">
+            <h3>松竹 2025 修复计划公开第四批片单</h3>
+            <p>10月29日，松竹在东京公布 2025 年 4K 修复计划第四批 8 部作品，含小津安二郎《麦秋》《晚春》，扫描均在现像所完成。首批修复拷贝将于 2027 年进入海外影展。</p>
+            <div class="src">来源：松竹官方新闻稿 · 2026-10-29</div>
+          </article>
+          <article class="news">
+            <h3>香港电影资料馆 11月借展安排</h3>
+            <p>资料馆 11月3日更新借展清单，35mm 拷贝《特写》《持摄影机的人》分别借予内地两家艺术影院，借展期各 10 天，运输与保险由借展方承担。</p>
+            <div class="src">来源：香港电影资料馆借展公告 · 2026-11-03</div>
+          </article>
+          <article class="news">
+            <h3>艺术影院联盟发布 2026 第三季度放映数据</h3>
+            <p>联盟 11月1日发布数据，成员影院第三季度修复版放映场次同比增加 23%，平均上座率 61%，其中 4K 修复场票价中位数 65 元，比 2025 年同期上涨 4 元。</p>
+            <div class="src">来源：艺术影院联盟季度简报 · 2026-11-01</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="sec" id="related">
+        <div class="sec-head">
+          <h2>相关推荐</h2>
+          <span class="tag">按片源与场次类型</span>
+        </div>
+        <div class="rec-list">
+          <a href="/#picks">小津安二郎回顾展全部场次</a>
+          <a href="/#deep">4K 修复版画质辨析</a>
+          <a href="/#guide">艺术电影选座攻略</a>
+          <a href="/#picks">35mm 胶片专场排期</a>
+          <a href="/#faq">退改签规则说明</a>
+          <a href="/#picks">导演映后交流场次</a>
+          <a href="/#picks">周三纪录片夜片单</a>
+          <a href="/#guide">亲子动画周末场观影提示</a>
+          <a href="/#news">影院行业季度数据</a>
+          <a href="/#compare">数字与胶片制式对照</a>
+        </div>
+      </section>
+
+      <!-- 引语卡 -->
+      <section class="sec" id="quote">
+        <div class="quote">
+          <div class="mark" aria-hidden="true">“</div>
+          <blockquote>
+            小津的低机位不是为了好看，是为了让观众坐在榻榻米上。修复版把这层意思保住了，暗部颗粒没被磨掉，演员脸上的油光还在。
+            <cite>—— 林知远，11月9日《东京物语》导赏讲稿，2026-11-05 定稿</cite>
+          </blockquote>
+        </div>
+      </section>
+
+    </div><!-- /main-col -->
+
+    <!-- 侧栏 -->
+    <aside class="sidebar" aria-label="侧栏">
+      <div class="side-card">
+        <h3>栏内导航</h3>
+        <nav class="side-nav" id="sideNav" aria-label="栏内导航">
+          <a href="/#overview">影院概览</a>
+          <a href="/#picks">本周精选放映</a>
+          <a href="/#updates">最新排片变动</a>
+          <a href="/#channels">频道分类</a>
+          <a href="/#deep">深度解析</a>
+          <a href="/#guide">观影体验指南</a>
+          <a href="/#faq">常见问题</a>
+          <a href="/#reviews">观众评论</a>
+          <a href="/#news">行业资讯</a>
+        </nav>
+      </div>
+      <div class="side-card">
+        <h3>近三日场次速记</h3>
+        <ul class="mini-list">
+          <li><time datetime="2026-11-08">11-08</time><span>《龙猫》国语版 14:00 一号厅</span></li>
+          <li><time datetime="2026-11-09">11-09</time><span>《东京物语》4K 10:30 一号厅</span></li>
+          <li><time datetime="2026-11-10">11-10</time><span>《河边的错误》导演剪辑版 20:15 二号厅</span></li>
+          <li><time datetime="2026-11-11">11-11</time><span>纪录片夜《持摄影机的人》19:30 二号厅</span></li>
+          <li><time datetime="2026-11-14">11-14</time><span>《特写》35mm 19:30 三号厅</span></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h3>票务提示</h3>
+        <p style="font-size:var(--fs-sm);color:var(--ink-2);margin:0 0 10px;">开场前 2 小时免费改签一次；取票码开场前 30 分钟生效。三号厅胶片场设手机寄存柜，免费。</p>
+        <a class="btn btn-line" href="/#guide" style="width:100%;justify-content:center;">看完整流程</a>
+      </div>
+    </aside>
+  </div><!-- /layout -->
+</main>
+
+<!-- 回到顶部 -->
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<!-- 页脚 -->
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#243b4d"/>
+            <circle cx="32" cy="32" r="17" fill="none" stroke="#e8b64c" stroke-width="4"/>
+            <circle cx="32" cy="32" r="5" fill="#e8b64c"/>
+          </svg>
+          <b>eeuss影院官网</b>
+        </div>
+        <p class="foot-desc">三家影厅、612 个座位，以修复版经典、作者电影与纪录片夜为主线，排片每日 09:00 同步。</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h3>排片与场次</h3>
+          <ul>
+            <li><a href="/#picks">本周精选放映</a></li>
+            <li><a href="/#updates">最新排片变动</a></li>
+            <li><a href="/#rank">本周上座率榜</a></li>
+            <li><a href="/#channels">频道分类</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>观影参考</h3>
+          <ul>
+            <li><a href="/#deep">修复版画质辨析</a></li>
+            <li><a href="/#compare">数字与胶片对照</a></li>
+            <li><a href="/#guide">首次观影流程</a></li>
+            <li><a href="/#faq">退改签与选座</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>观众与资讯</h3>
+          <ul>
+            <li><a href="/#reviews">观众评论</a></li>
+            <li><a href="/#news">行业资讯</a></li>
+            <li><a href="/#related">相关推荐</a></li>
+            <li><a href="/#quote">策展人引语</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-note">
+      <p>页面内容示例：场次、票价、余票与评论均为演示数据，实际以影院售票系统为准。</p>
+      <p>更新时间：2026-11-08 · 对应「最新排片与场次变动」板块</p>
+      <p>© 2026 eeuss影院官网 · 本站为静态展示页</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* 移动端菜单 */
+  var menuBtn=document.getElementById('menuBtn');
+  var nav=document.getElementById('themeNav');
+  menuBtn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A' && window.matchMedia('(max-width:760px)').matches){
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    }
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+      document.getElementById('searchResult').classList.remove('open');
+    }
+  });
+
+  /* 站内本地搜索 */
+  var input=document.getElementById('siteSearch');
+  var btn=document.getElementById('searchBtn');
+  var out=document.getElementById('searchResult');
+  var idx=[
+    {t:'《东京物语》4K 修复版',u:'/#picks',d:'11月9日 10:30 一号厅，余票 46'},
+    {t:'《特写》35mm 胶片场',u:'/#picks',d:'11月14日 19:30 三号厅，香港资料馆借展'},
+    {t:'《河边的错误》导演剪辑版',u:'/#picks',d:'11月10日 20:15 二号厅，映后交流'},
+    {t:'《龙猫》国语配音版',u:'/#picks',d:'11月8日 14:00 一号厅，亲子场'},
+    {t:'《坂本龙一：最后的日子》',u:'/#picks',d:'11月11日 19:30 二号厅，免费纪录片夜'},
+    {t:'小津安二郎回顾展',u:'/#channels',d:'7 场，含 4K 修复与导赏'},
+    {t:'4K 修复版画质辨析',u:'/#deep',d:'扫描源、影厅亮度与票价对照'},
+    {t:'艺术电影选座攻略',u:'/#guide',d:'按银幕尺寸与画幅选排数'},
+    {t:'退改签规则',u:'/#faq',d:'开场前 2 小时免费改签一次'},
+    {t:'35mm 胶片专场',u:'/#compare',d:'三号厅，银幕 7.8 米，票价 78 元'},
+    {t:'影院行业季度数据',u:'/#news',d:'2026 第三季度修复版上座率 61%'},
+    {t:'周三纪录片夜',u:'/#updates',d:'每周三 18:00 起领免费票'}
+  ];
+  function run(){
+    var q=input.value.trim();
+    out.classList.add('open');
+    if(!q){
+      out.innerHTML='<p class="empty">输入片名、导演、影厅或关键词，例如「小津」「胶片」「退票」。</p>';
+      return;
+    }
+    var hits=idx.filter(function(item){
+      return (item.t+item.d).toLowerCase().indexOf(q.toLowerCase())>-1;
+    });
+    if(!hits.length){
+      out.innerHTML='<p class="empty">没有找到「'+q.replace(/[<>&]/g,'')+'」。可试试片名、导演名，或「胶片」「修复」「退票」。</p>';
+      return;
+    }
+    var html='<ul>';
+    hits.slice(0,6).forEach(function(item){
+      html+='<li><a href="'+item.u+'">'+item.t+'</a> <span style="color:var(--muted);font-size:12px;">'+item.d+'</span></li>';
+    });
+    html+='</ul>';
+    out.innerHTML=html;
+  }
+  btn.addEventListener('click',run);
+  input.addEventListener('keydown',function(e){ if(e.key==='Enter'){ run(); } });
+  input.addEventListener('input',function(){ if(input.value.trim()){ run(); } });
+  document.addEventListener('click',function(e){
+    if(!out.contains(e.target) && e.target!==input && e.target!==btn){
+      out.classList.remove('open');
+    }
+  });
+
+  /* 侧栏滚动高亮 */
+  var links=Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var targets=links.map(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+  function highlight(){
+    var pos=window.scrollY+((parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ann-h'))||38)+(parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--head-h'))||64)+24);
+    var current=-1;
+    targets.forEach(function(t,i){ if(t.offsetTop<=pos){ current=i; } });
+    links.forEach(function(a,i){ a.classList.toggle('active',i===current); });
+  }
+  window.addEventListener('scroll',highlight,{passive:true});
+  highlight();
+
+  /* 回到顶部 */
+  var top=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>560){ top.classList.add('show'); } else { top.classList.remove('show'); }
+  },{passive:true});
+  top.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"eeuss影院官网",
+  "inLanguage":"zh-CN",
+  "description":"独立影院排片、影展片单、艺术电影放映与观影体验参考。",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"/#top?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"《东京物语》4K 修复版 11月9日还有票吗？","acceptedAnswer":{"@type":"Answer","text":"10:30 场截至 11月8日 09:00 余票 46 张，集中在 1—6 排与 10 排两侧，票价 68 元，开场后 15 分钟停止入场。"}},
+    {"@type":"Question","name":"一号厅和二号厅看艺术电影，选座差别在哪？","acceptedAnswer":{"@type":"Answer","text":"一号厅银幕 9.2 米、228 座，7—9 排中区视角稳；二号厅银幕 6.4 米、146 座，最佳区在 4—6 排。艺术电影画幅上下留黑边，建议至少退到第 5 排。"}},
+    {"@type":"Question","name":"35mm 胶片场为什么比数字场贵 10 元？","acceptedAnswer":{"@type":"Answer","text":"胶片拷贝从香港电影资料馆借展，单次运输与保险成本约 3800 元，分摊到 2 场约 240 张票上，每张票增加约 16 元，影院定价只高 10 元。"}},
+    {"@type":"Question","name":"周三纪录片夜的免费票怎么领？","acceptedAnswer":{"@type":"Answer","text":"每周三 18:00 起在自助取票机领取，需刷身份证，一人一张，不可代领，二号厅 146 座，领完即止。"}},
+    {"@type":"Question","name":"映后交流一般持续多久，需要另买票吗？","acceptedAnswer":{"@type":"Answer","text":"映后交流包含在电影票内，不另收费，通常 30 分钟，导演场可能延长至 45 分钟，在二层咖啡区进行，座位 48 个先到先坐。"}},
+    {"@type":"Question","name":"迟到了还能进场吗？","acceptedAnswer":{"@type":"Answer","text":"正片开场 15 分钟后停止入场，迟到者可在大厅屏幕看同步画面，或凭票根到售票处改签同片其他场次，改签不收费，每张票限一次。"}}
+  ]
+}
+</script>
+
+</body>
+                    </html>
